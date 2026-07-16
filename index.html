@@ -190,29 +190,31 @@
   .legend b{ font-weight:600; margin-right:4px; }
   .legend .item{ display:flex; align-items:center; gap:6px; color:var(--muted); }
 
-  /* ---------- ONDE ESTAMOS (4 quadrados) ---------- */
-  .onde-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:36px;
+  /* ---------- ONDE ESTAMOS (hoje + próxima fase) ---------- */
+  .onde-group-label{
+    display:block; font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.06em;
+    text-transform:uppercase; margin-top:34px; margin-bottom:14px;
   }
-  @media (max-width:860px){ .onde-grid{ grid-template-columns:1fr 1fr; } }
-  @media (max-width:520px){ .onde-grid{ grid-template-columns:1fr; } }
+  .sec-head + .onde-group-label{ margin-top:36px; }
+  .onde-grid{ display:grid; gap:16px; }
+  .onde-grid-today{ grid-template-columns:repeat(2,1fr); }
+  .onde-grid-next{ grid-template-columns:repeat(5,1fr); }
+  @media (max-width:960px){ .onde-grid-next{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:640px){ .onde-grid-today{ grid-template-columns:1fr; } .onde-grid-next{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:420px){ .onde-grid-next{ grid-template-columns:1fr; } }
   .onde-card{
-    aspect-ratio:1/1; display:flex; flex-direction:column; justify-content:center; align-items:center;
-    text-align:center; border-radius:18px; border:2px solid transparent; background:var(--lav);
-    font-family:inherit; cursor:pointer; padding:20px 16px; transition:transform .2s ease, box-shadow .2s ease;
+    display:flex; flex-direction:column; align-items:flex-start; text-align:left;
+    border-radius:16px; border:2px solid transparent; background:var(--lav);
+    padding:18px 18px 20px;
   }
-  .onde-card:hover{ transform:translateY(-3px); box-shadow:0 14px 28px -16px rgba(60,40,120,0.3); }
   .onde-status{
-    font-family:'Poppins',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
-    margin-bottom:10px;
+    font-family:'Poppins',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+    margin-bottom:8px;
   }
-  .onde-label{ font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:var(--ink); margin-bottom:8px; }
-  .onde-desc{ font-size:12.5px; color:var(--muted); line-height:1.45; }
+  .onde-label{ font-family:'Poppins',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-bottom:8px; line-height:1.25; }
+  .onde-desc{ font-size:12px; color:var(--muted); line-height:1.5; }
   .onde-card.done{ background:#E6F6EF; } .onde-card.done .onde-status{ color:var(--green); }
-  .onde-card.current{ background:#FDECE6; border-color:var(--coral); } .onde-card.current .onde-status{ color:var(--coral); }
   .onde-card.next{ background:#EFEAFB; } .onde-card.next .onde-status{ color:var(--purple); }
-  .onde-card.future{ background:#F4F4F6; } .onde-card.future .onde-status{ color:var(--muted); }
-  .onde-card.future .onde-label{ color:var(--muted); }
 
   /* ---------- TIMELINE (onde estamos) ---------- */
   .timeline{ position:relative; margin-top:20px; }
@@ -450,27 +452,47 @@
       <p>Da imersão inicial ao início da Fase 2 de execução.</p>
     </div>
 
-    <div class="onde-grid">
-      <button class="onde-card done" data-goto="#o-que-fizemos">
-        <span class="onde-status">Concluído</span>
+    <span class="onde-group-label" style="color:var(--green);">O que mostraremos hoje</span>
+    <div class="onde-grid onde-grid-today">
+      <div class="onde-card done">
+        <span class="onde-status">01</span>
         <span class="onde-label">Discovery</span>
-        <span class="onde-desc">Imersão, perfil de pacientes, diagnóstico</span>
-      </button>
-      <button class="onde-card current" data-goto="#o-que-fizemos">
-        <span class="onde-status">Você está aqui</span>
-        <span class="onde-label">17/07</span>
-        <span class="onde-desc">Touchpoint — primeiros insights</span>
-      </button>
-      <button class="onde-card next" data-goto="#proximas">
-        <span class="onde-status">Próxima etapa</span>
-        <span class="onde-label">25/07</span>
-        <span class="onde-desc">Fechamento da Fase 1</span>
-      </button>
-      <button class="onde-card future" data-goto="#ate1008">
-        <span class="onde-status">Em breve</span>
-        <span class="onde-label">A partir de 10/08</span>
-        <span class="onde-desc">Fase 2 — identidade e conteúdo</span>
-      </button>
+        <span class="onde-desc">Imersão no negócio, entendimento da proposta de valor e primeiros insights.</span>
+      </div>
+      <div class="onde-card done">
+        <span class="onde-status">02</span>
+        <span class="onde-label">Análise</span>
+        <span class="onde-desc">Site, concorrência e jornada do paciente.</span>
+      </div>
+    </div>
+
+    <span class="onde-group-label" style="color:var(--purple);">Próxima fase</span>
+    <div class="onde-grid onde-grid-next">
+      <div class="onde-card next">
+        <span class="onde-status">25/07</span>
+        <span class="onde-label">Fechamento da Fase 1</span>
+        <span class="onde-desc">Texto e fluxo das réguas de relacionamento, bio e nome do Instagram, configuração do Meta Business Suite com indicadores principais.</span>
+      </div>
+      <div class="onde-card next">
+        <span class="onde-status">10/08</span>
+        <span class="onde-label">Identidade &amp; preparação</span>
+        <span class="onde-desc">Apresentação e aprovação do logo + identidade visual, moodboard para as fotos do shooting, fase 2 da consultoria de imagem com a Pry, 1ª versão do cronograma do shooting.</span>
+      </div>
+      <div class="onde-card next">
+        <span class="onde-status">15/08</span>
+        <span class="onde-label">Shooting</span>
+        <span class="onde-desc">Dia da produção fotográfica.</span>
+      </div>
+      <div class="onde-card next">
+        <span class="onde-status">21/08</span>
+        <span class="onde-label">Entrega das fotos</span>
+        <span class="onde-desc">Fotos entregues + ajustes finais das redes (site, Instagram e WhatsApp).</span>
+      </div>
+      <div class="onde-card next">
+        <span class="onde-status">28/08</span>
+        <span class="onde-label">Conteúdo do 1º mês</span>
+        <span class="onde-desc">Calendário de campanhas do 1º mês + 20 posts completos com legenda + entrega do e-book.</span>
+      </div>
     </div>
   </div>
 </section>
