@@ -345,7 +345,69 @@
   .comp-closing-list li{ display:flex; gap:10px; padding:9px 0; font-size:13px; line-height:1.5; color:#E7E5F2; }
   .comp-closing-list li::before{ content:"—"; color:var(--muted-dark); flex-shrink:0; }
 
-  /* ---------- JORNADA DETALHADA (fases/steps/branches) ---------- */
+  /* ---------- CHECKPOINT ---------- */
+  .checkpoint-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:8px; }
+  @media (max-width:860px){ .checkpoint-grid{ grid-template-columns:1fr; } }
+  .checkpoint-card{ background:#fff; border:1px solid #EFE2B8; border-radius:16px; padding:24px 22px; }
+  .checkpoint-q{
+    display:inline-block; font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--gold); background:#FBF0D6; padding:4px 10px; border-radius:999px; margin-bottom:12px;
+  }
+  .checkpoint-card h3{ font-size:16px; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.3; }
+  .checkpoint-card p{ font-size:13px; color:var(--muted); line-height:1.55; margin:0; }
+
+  /* ---------- SITE TABS ---------- */
+  .site-tabs{ display:flex; gap:8px; flex-wrap:wrap; margin:28px 0 24px; }
+  .site-tab-btn{
+    font-family:'Poppins',sans-serif; font-size:12.5px; font-weight:600; padding:9px 16px; border-radius:999px;
+    border:1px solid var(--line); background:#fff; color:var(--muted); cursor:pointer; transition:all .2s;
+  }
+  .site-tab-btn.active{ background:var(--purple); border-color:var(--purple); color:#fff; }
+  .site-tab-btn:hover:not(.active){ border-color:var(--purple); color:var(--purple); }
+
+  .attn-item{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:12px; }
+  .attn-badge{
+    display:inline-block; font-family:'Poppins',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.05em;
+    text-transform:uppercase; padding:3px 10px; border-radius:999px; margin-bottom:8px;
+  }
+  .attn-badge.resolved{ background:#E6F6EF; color:var(--green); }
+  .attn-badge.pending{ background:#FDECE6; color:var(--coral); }
+  .attn-item h4{ font-size:14.5px; font-weight:700; color:var(--ink); margin:0 0 5px; }
+  .attn-item p{ font-size:13px; color:var(--muted); margin:0; line-height:1.5; }
+
+  .copy-field{ margin-bottom:14px; }
+  .copy-field:last-child{ margin-bottom:0; }
+  .copy-field h4{
+    font-family:'Poppins',sans-serif; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--purple); margin:0 0 4px; font-weight:700;
+  }
+  .copy-field p{ font-size:13.5px; color:var(--ink); line-height:1.55; margin:0; }
+  .copy-pending{
+    margin-top:14px; background:#FDECE6; color:var(--coral); border-radius:10px; padding:12px 16px; font-size:12.5px; line-height:1.5;
+  }
+
+  .plan-category{ margin-bottom:26px; }
+  .plan-category:last-child{ margin-bottom:0; }
+  .plan-category .kicker{ display:block; margin-bottom:6px; }
+
+  .analytics-steps{ margin:10px 0 0; padding-left:20px; }
+  .analytics-steps li{ font-size:13.5px; color:var(--ink); line-height:1.6; margin-bottom:10px; }
+  .analytics-steps li b{ color:var(--purple); }
+  .analytics-email{ font-size:13px; color:var(--muted); margin-top:4px; }
+  .analytics-note{ font-size:12.5px; color:var(--muted); line-height:1.55; margin-top:16px; }
+  .analytics-note code{ background:var(--lav); padding:1px 6px; border-radius:5px; font-size:12px; }
+
+  .tagbook-table{ width:100%; border-collapse:collapse; font-size:12px; background:#fff; border-radius:10px; overflow:hidden; }
+  .tagbook-table th, .tagbook-table td{ text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  .tagbook-table th{ background:var(--lav); color:var(--muted); font-weight:700; text-transform:uppercase; font-size:10px; letter-spacing:0.04em; }
+  .tagbook-table td{ color:var(--ink); }
+
+  .site-synthesis{
+    margin-top:36px; background:var(--navy); color:#E7E5F2; border-radius:14px; padding:20px 24px; font-size:13.5px; line-height:1.6;
+  }
+  .site-synthesis b{ color:#C9B8FF; }
+
+
   .jr-step{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin-bottom:16px; }
   .jr-step:last-child{ margin-bottom:0; }
   .jr-step-head{ display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap; }
@@ -589,6 +651,38 @@
   </div>
 </section>
 
+<!-- ============ CHECKPOINT COM A FERNANDA ============ -->
+<section id="checkpoint" class="light" style="background:#FBF6E9;">
+  <div class="wrap">
+    <div class="sec-head-row">
+      <div class="sec-head" style="margin-bottom:30px;">
+        <span class="kicker" style="color:var(--gold);">Ponto de checagem</span>
+        <h2>Isso tudo faz sentido para você?</h2>
+        <p>Antes de seguir para a jornada e o site, paramos aqui de propósito — são três reflexões que valem ser validadas em conjunto com a Fernanda.</p>
+      </div>
+      <span class="owner-pill owner-ambos"><span class="owner-dot"></span>Fernanda + Vincla</span>
+    </div>
+
+    <div class="checkpoint-grid">
+      <div class="checkpoint-card">
+        <span class="checkpoint-q">Reflexão</span>
+        <h3>A dualidade como diferencial de imagem</h3>
+        <p>O perfil da Fernanda parece se encaixar nessa dualidade: energia alta, expansiva — mas que também sabe tratar temas com seriedade. É justamente essa dualidade que faz com que temas sérios ganhem ainda mais relevância. Trabalhar a imagem nesse sentido faz muita diferença.</p>
+      </div>
+      <div class="checkpoint-card">
+        <span class="checkpoint-q">Pergunta aberta</span>
+        <h3>Adulto atleta como público-alvo?</h3>
+        <p>O perfil adulto atleta (esportista) faria sentido ser também um público-alvo, visto que existe interesse pelo tema e espaço para pacotes específicos de atendimento?</p>
+      </div>
+      <div class="checkpoint-card">
+        <span class="checkpoint-q">Pergunta aberta</span>
+        <h3>@nutri.fernandazanateli agrada?</h3>
+        <p>Esse handle de Instagram — <b>@nutri.fernandazanateli</b> — funciona como proposta? Vale confirmar antes de seguir para a criação do perfil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 3/4 JORNADA ============ -->
 <section id="jornada" class="light" style="background:#F4F1FB;">
   <div class="wrap">
@@ -631,32 +725,38 @@
   <div class="wrap">
     <a href="#o-que-fizemos" class="backlink">← Voltar às 4 frentes</a>
     <div class="sec-head-row">
-      <div class="sec-head" style="margin-bottom:36px;">
+      <div class="sec-head" style="margin-bottom:8px;">
         <span class="crumb">4 / 4</span>
         <h2>Análise e orientação do site</h2>
-        <p>O que orientamos e o que fica com a Fernanda até 25/07.</p>
+        <p>Site analisado: triarquide-99805140512.southamerica-east1.run.app — pontos de atenção, copy final aprovada bloco a bloco, e o plano de ação completo até o site ir ao ar.</p>
       </div>
       <span class="owner-pill owner-ambos"><span class="owner-dot"></span>Fernanda + Vincla</span>
     </div>
 
-    <div class="site-grid">
-      <div>
-        <span class="kicker" style="color:var(--purple);">Nossa orientação (Vincla)</span>
-        <ul class="orient-list">
-          <li><span class="orient-dot"></span>Reestruturar a jornada do paciente dentro do site — hoje básico, sem fluxo claro</li>
-          <li><span class="orient-dot"></span>Integração direta com WhatsApp (link click-to-chat)</li>
-          <li><span class="orient-dot"></span>Tagbook + Google Analytics para entender o comportamento dos visitantes</li>
-          <li><span class="orient-dot"></span>Identidade visual alinhada ao Instagram e aos demais canais</li>
-        </ul>
-      </div>
+    <div class="site-tabs" id="siteTabs"></div>
+    <div id="sitePanels"></div>
 
-      <div class="todo-card">
-        <div class="todo-card-head">
-          <span class="kicker" style="color:var(--coral);">To-dos da Fernanda — até 25/07</span>
-        </div>
-        <div class="todo-progress-track"><div class="todo-progress-fill" id="todoFill"></div></div>
-        <div id="todo-list"></div>
+    <div class="site-synthesis">
+      <b>Síntese:</b> a copy final resolveu a maior parte dos pontos estratégicos levantados no diagnóstico — consistência de posicionamento, segmentação do público, tratamento de objeções e padronização de CTAs. O que resta é, em grande parte, execução: identidade visual, produção fotográfica, implementação técnica e coleta de depoimentos.
+    </div>
+  </div>
+</section>
+
+<!-- ============ TO-DOS DA FERNANDA (ATÉ 25/07 E 01/08) ============ -->
+<section id="todos-fernanda" class="light" style="background:#F4F1FB;">
+  <div class="wrap">
+    <div class="sec-head-row">
+      <div class="sec-head" style="margin-bottom:30px;">
+        <span class="kicker" style="color:var(--coral);">Antes do fechamento da Fase 1</span>
+        <h2>To-dos da Fernanda</h2>
+        <p>O que fica com a Fernanda para que a Fase 1 feche no prazo.</p>
       </div>
+      <span class="owner-pill owner-fernanda"><span class="owner-dot"></span>Fernanda</span>
+    </div>
+
+    <div class="todo-card" style="max-width:720px;">
+      <div class="todo-progress-track"><div class="todo-progress-fill" id="fernandaTodoFill"></div></div>
+      <div id="fernanda-todo-list"></div>
     </div>
   </div>
 </section>
@@ -803,13 +903,138 @@ const insights = [
     ]},
 ];
 
-const todos = [
-  'Realizar os ajustes do site (conforme documento enviado)',
-  'Compilar clientes: nome, data de início, datas das consultas e preço por consulta — vamos calcular o LTV e entender a base pelo modelo RFV',
-  'Criar o Instagram com o @ sugerido + configurar o Meta Business Suite (Facebook e WhatsApp)',
-  'Criar perfil no Doctoralia',
-  'Criar Perfil da Empresa no Google (Google Business Profile)',
-  'Coletar depoimentos no perfil do Google e responder a eles',
+const siteAttentionPoints = [
+  { title: 'Dados de contato fictícios (CRN, WhatsApp, e-mail, endereço)', body: 'O site ainda usa placeholders no lugar dos dados reais de contato da Fernanda.' },
+  { title: 'Contradição de posicionamento: "sem culpa" x "Emagrecimento/Hipertrofia"', body: 'O site fala em "sem culpa" e, ao mesmo tempo, promete emagrecimento/hipertrofia — não fica claro para o público como as duas coisas convivem no método de trabalho.' },
+  { title: '"Análise Digital via IA" sem respaldo técnico explicado', body: 'O site menciona uma "Análise Digital via IA" no método de trabalho, sem explicar qual ferramenta é essa ou o que ela mede.' },
+  { title: 'Segmentação do público', body: 'Não existe um direcionamento claro sobre qual público está sendo buscado na abordagem do site.' },
+  { title: 'Prova social genérica, sem especificidade', body: 'A prova social do site é genérica — não há depoimentos específicos de pessoas que já realizaram os serviços.' },
+  { title: 'Ausência de FAQ / tratamento de objeções', body: 'O site não tem nenhum espaço de dúvidas frequentes ou tratamento de objeções, o que pesa ainda mais por ser um serviço 100% online.' },
+  { title: 'CTA não está claro e exige esforço do cliente para marcar uma consulta', body: 'O caminho para agendar uma consulta não é claro — faltam botões diretos de chamada para ação ao longo do site.' },
+  { title: 'Ausência de identidade visual (logo, paleta, tipografia)', body: 'O site não tem logo, paleta de cores ou tipografia definidos — hoje é só estrutura, sem marca aplicada.' },
+  { title: 'Sem fotos profissionais (placeholder único)', body: 'O site usa um único placeholder de imagem repetido, sem nenhuma foto profissional real da Fernanda.' },
+  { title: 'Sem rastreamento/Analytics', body: 'Não existe nenhum rastreamento do comportamento dos visitantes implementado no site.' },
+  { title: 'Organização da ordem de blocos', body: 'A ordem atual dos blocos não necessariamente segue o caminho mais fácil para o cliente encontrar as informações que busca.' },
+];
+
+const siteCopyBlocks = [
+  { tag: 'Global', title: 'Elementos globais', fields: [
+    { label: 'Ícone flutuante', value: 'Ícone do WhatsApp fixo no canto da tela durante toda a rolagem, com o mesmo link do Bloco 6 — visível em todos os blocos, não só no rodapé.' },
+    { label: 'CTA repetido', value: 'Todo bloco termina com "Agende sua consulta", apontando para o WhatsApp — a repetição é intencional: cada seção é um novo ponto de saída para quem já se convenceu naquele trecho.' },
+    { label: 'Animação de rolagem', value: 'Os itens de cada bloco aparecem de forma sutil ao serem rolados, acompanhando a velocidade de interação da pessoa.' },
+  ]},
+  { tag: 'Bloco 1', title: 'Abertura', fields: [
+    { label: 'Selo / Kicker', value: 'Nutrição clínica · Base científica' },
+    { label: 'Headline', value: 'Recupere o prazer em comer e faça as pazes com o seu corpo através de um olhar humano, gentil e sem julgamentos.' },
+    { label: 'Texto de apoio', value: 'Planos alinhados ao seu estilo de vida, exames e metas.' },
+    { label: 'CTA', value: 'Agende sua consulta' },
+  ], pending: 'Foto profissional da Fernanda (ensaio fotográfico) + selo com o CRN real, aplicados sobre a identidade visual.' },
+  { tag: 'Bloco 2', title: 'Quem sou eu (resumo) + página Sobre mim completa', fields: [
+    { label: 'Kicker', value: 'Quem cuida de você' },
+    { label: 'Texto curto (resumo)', value: 'Sou a Nutricionista Fernanda Zanateli. Meu propósito como nutricionista é transformar sua relação com a comida e com o corpo — sem culpa, sem restrições, e com muito mais liberdade e confiança.' },
+    { label: 'Link secundário', value: '"Saiba mais sobre mim" — abre a versão completa em página própria, para gerar conexão rápida sem contar a história inteira aqui.' },
+    { label: 'CTA', value: 'Agende sua consulta' },
+    { label: 'Página "Sobre mim" completa', value: 'Sou Fernanda Zanateli, nutricionista formada há 05 anos pela Universidade de Taubaté e pós-graduada em Comportamento Alimentar. Acredito que alimentação saudável precisa ser possível no mundo real, com trabalho, família, imprevistos — não apenas em teorias irreais. Meu propósito como nutricionista é transformar sua relação com a comida e com o corpo — sem culpa, sem restrições, e com muito mais liberdade e confiança. Comer é um ato fisiológico, mas também emocional, social e cultural. Para além de uma prescrição dietética, meu objetivo é te ajudar a entender o porquê e o como você come. Minha escuta é ativa e presente: mais do que prescrever, meu papel é caminhar ao seu lado, entendendo o que a comida representa na sua história e ajustando o processo com você, não para você. Quero ser uma parceira nessa jornada — para que os resultados não sejam só números, mas mais qualidade de vida, leveza e liberdade no seu dia a dia.' },
+  ], pending: 'Foto profissional da Fernanda para este bloco (plano fechado, rosto em destaque) + foto adicional/galeria e selo do CRN real na página completa.' },
+  { tag: 'Bloco 3', title: 'Minhas especialidades', fields: [
+    { label: 'Kicker', value: 'Como posso te ajudar' },
+    { label: 'Headline', value: 'Minhas especialidades' },
+    { label: 'Texto de abertura', value: 'A nutrição comportamental é a abordagem principal dos meus atendimentos, com escuta ativa e acolhimento para que seus objetivos sejam alcançados levando em consideração sua realidade e o significado que a comida tem em sua vida.' },
+    { label: 'Cards (1 por serviço)', value: 'Avaliação Corporal · Nutrição Clínica · Reeducação Alimentar · Plano Alimentar Individualizado · Emagrecimento com base comportamental · Nutrição Esportiva/Performance · Seletividade alimentar infantil (TEA).' },
+    { label: 'CTA', value: 'Agende sua consulta' },
+  ], pending: 'Foto/ícone ou ilustração para cada card, na paleta e estilo visual definidos na Fase 1.' },
+  { tag: 'Bloco 4', title: 'Meu método de trabalho', fields: [
+    { label: 'Kicker', value: 'Como funciona' },
+    { label: 'Headline', value: 'Meu método de trabalho' },
+    { label: 'Passo a passo', value: 'Consulta inicial (conversa profunda sobre objetivos e histórico) → Análise Digital (avaliação física via IA) → Plano personalizado → Acompanhamento contínuo.' },
+    { label: 'Nota de rodapé', value: 'Todos os atendimentos são feitos online, por videochamada, com o mesmo cuidado e acolhimento de um consultório presencial.' },
+    { label: 'CTA', value: 'Agende sua consulta' },
+  ], pending: 'Confirmar com a Fernanda o respaldo técnico da "Análise Digital via IA" (qual ferramenta, o que mede) antes de publicar.' },
+  { tag: 'Bloco 5', title: 'Depoimentos (carrossel)', fields: [
+    { label: 'Kicker', value: 'Confiança' },
+    { label: 'Headline', value: 'O que dizem minhas pacientes' },
+    { label: 'Estrutura de cada slide', value: 'Citação com foco em autonomia, ausência de julgamento e processo — não apenas resultado de peso.' },
+    { label: 'CTA', value: 'Agende sua consulta' },
+  ], pending: 'Coletar/reescrever ao menos 3 depoimentos reais.' },
+  { tag: 'Bloco 6', title: 'Contato + FAQ', fields: [
+    { label: 'Kicker', value: 'Próximo passo' },
+    { label: 'Headline', value: 'Vamos dar o primeiro passo?' },
+    { label: 'Texto principal', value: 'Mudar a forma como nos alimentamos é um processo corajoso. Se você sente que é o momento de cuidar de si com mais carinho e menos cobrança, estou aqui para te acompanhar.' },
+    { label: 'CTA grande', value: 'Agende sua consulta → link do WhatsApp (click-to-chat, mensagem pré-preenchida).' },
+    { label: 'Informações de contato', value: 'E-mail, WhatsApp e Instagram — dados reais a confirmar.' },
+    { label: 'Links de rodapé', value: 'Dúvidas frequentes · Instagram · WhatsApp ("Agende sua consulta").' },
+    { label: 'FAQ', value: '"Como funciona a consulta online?" · "Quanto tempo dura o acompanhamento?" · "Qual o valor da consulta?"' },
+  ], pending: 'Substituir todos os dados de contato fictícios pelos reais, e confirmar o perfil do Instagram a ser linkado, antes da publicação.' },
+];
+
+const sitePlanCategories = [
+  { name: 'Dados & Compliance', items: [
+    'Substituir CRN, WhatsApp, e-mail e endereço fictícios pelos dados reais da Fernanda',
+    'Confirmar o respaldo técnico da "Análise Digital via IA" (Bloco 4) e ajustar o texto, ou remover o item',
+  ]},
+  { name: 'Identidade Visual & Produção', items: [
+    'Criar identidade visual (logo, paleta, tipografia)',
+    'Realizar o ensaio fotográfico (Bloco 1, Bloco 2 e página "Sobre mim" completa)',
+    'Criar ícones/ilustrações para os 7 cards de especialidades (Bloco 3)',
+  ]},
+  { name: 'Conteúdo & Prova Social', items: [
+    'Coletar/reescrever ao menos 3 depoimentos reais para o carrossel (Bloco 5)',
+    'Redigir e revisar o conteúdo do link do Instagram e do rodapé ("link com logo do Instagram")',
+  ]},
+  { name: 'Implementação Técnica', items: [
+    'Configurar o link de WhatsApp em formato click-to-chat com mensagem pré-preenchida (ícone flutuante + Bloco 6)',
+    'Implementar a animação de entrada dos elementos ao rolar a página (fade/slide sutil, sincronizado com a velocidade do scroll)',
+    'Delegar acesso de administrador do GA4 e GTM para a Vincla',
+    'Configurar propriedades, tags e eventos no GA4/GTM',
+    'Implementar o tagbook no site (seção 4.2)',
+  ]},
+  { name: 'Funil & Mensuração', items: [
+    'Acompanhar o painel de indicadores (Power BI), com foco na conversão de contato em agendamento',
+  ]},
+];
+
+const analyticsSteps = [
+  'Conta Google do negócio: criar (ou usar) um e-mail Google da Fernanda.',
+  'Criar a propriedade GA4: acessar analytics.google.com e criar a conta + propriedade GA4 (nome da empresa, fuso horário, moeda) + um fluxo de dados do tipo Web apontando para o site.',
+  'Conceder acesso à Vincla no GA4: em Administrador → Gerenciamento de acesso à propriedade, adicionar o e-mail da Vincla com o papel de Administrador.',
+  'Criar o container no Google Tag Manager: acessar tagmanager.google.com e criar a conta/container do site.',
+  'Conceder acesso à Vincla no GTM: adicionar o e-mail da Vincla com permissão de Publicar (não apenas editar) — sem essa permissão, a Vincla configura as tags mas não consegue colocá-las no ar.',
+];
+
+const tagbookRows = [
+  ['CTA "Agende sua consulta"', 'Bloco 1 (Hero)', 'cta_click', 'cta_location: bloco_1_hero'],
+  ['Link "Saiba mais sobre mim"', 'Bloco 2', 'cta_click', 'cta_location: bloco_2_saiba_mais'],
+  ['CTA "Agende sua consulta"', 'Bloco 2 / Sobre mim completa', 'cta_click', 'cta_location: bloco_2_cta / sobre_mim_cta'],
+  ['CTA "Agende sua consulta"', 'Bloco 3 (Especialidades)', 'cta_click', 'cta_location: bloco_3_especialidades'],
+  ['CTA "Agende sua consulta"', 'Bloco 4 (Método)', 'cta_click', 'cta_location: bloco_4_metodo'],
+  ['CTA "Agende sua consulta"', 'Bloco 5 (Depoimentos)', 'cta_click', 'cta_location: bloco_5_depoimentos'],
+  ['CTA "Agende consulta no WhatsApp"', 'Bloco 6 (Contato)', 'cta_click', 'cta_location: bloco_6_contato'],
+  ['Ícone flutuante de WhatsApp', 'Global', 'cta_click', 'cta_location: whatsapp_flutuante'],
+  ['Link do Instagram', 'Rodapé', 'social_click', 'rede: instagram'],
+  ['Abertura de cada pergunta', 'FAQ (Bloco 6)', 'faq_open', 'pergunta: [texto da pergunta]'],
+  ['Rolagem até 90% da página', 'Global', 'scroll', 'Automático (Enhanced Measurement do GA4)'],
+];
+
+const doctoraliaSteps = [
+  'Criar conta profissional em doctoralia.com.br, com CRN e dados reais.',
+  'Preencher especialidades usando os mesmos termos da estratégia de SEO: nutrição comportamental, reeducação alimentar, seletividade alimentar infantil (TEA).',
+  'Reaproveitar o texto da página "Sobre mim" completa como biografia, e usar a mesma foto do ensaio profissional.',
+  'Marcar o tipo de atendimento como "Teleconsulta/Online".',
+  'Ativar a agenda de horários do Doctoralia como canal extra, mesmo que o fluxo principal continue sendo o WhatsApp.',
+  'Cruzar links: linkar o site oficial no perfil do Doctoralia, e adicionar um link para o Doctoralia no rodapé do Bloco 6.',
+  'Incentivar avaliações: o Doctoralia envia link automático após consultas agendadas por ele; para as demais, pedir manualmente.',
+  'Plano pago (opcional, para depois): existe destaque pago na busca interna — vale avaliar só depois que o perfil já tiver algumas avaliações reais.',
+];
+
+const gbpSteps = [
+  'Criar o perfil em google.com/business, com o nome "Fernanda Zanateli — Nutricionista".',
+  'Categoria: "Nutricionista".',
+  'Endereço: escolher "Eu entrego bens/serviços aos meus clientes" (esconde endereço público) e definir a área de atendimento, já que é 100% online.',
+  'Preencher telefone/WhatsApp, site, horário e adicionar as fotos do ensaio profissional.',
+  'Verificação: para perfis sem endereço público, o Google costuma pedir verificação por vídeo ou telefone — precisa ser concluída para o perfil ficar visível.',
+  'Preencher a lista de Serviços do perfil espelhando os cards do Bloco 3 do site.',
+  'Ativar o botão de mensagens do perfil, como canal de contato adicional ao WhatsApp.',
+  'Solicitar aos pacientes que dêem avaliação no Google e responder todas as avaliações.',
 ];
 
 const TAG_COLOR = { entrada:'#8A8698', step:'var(--purple)', prep:'#2E9E8C', decisao:'var(--coral)', pos:'#B5568A' };
@@ -926,25 +1151,158 @@ insights.forEach((it, idx) => {
   insightList.appendChild(el);
 });
 
-// ---------------- RENDER TODOS ----------------
-const todoListEl = document.getElementById('todo-list');
-const todoFill = document.getElementById('todoFill');
-function updateTodoProgress(){
-  const total = todos.length;
-  const done = todoListEl.querySelectorAll('.todo-item.done').length;
-  todoFill.style.width = (done/total*100) + '%';
+// ---------------- RENDER SITE TABS ----------------
+const siteTabDefs = ['Pontos de atenção', 'Copy final', 'Plano de ação', 'Analytics', 'Doctoralia & Google'];
+const siteTabsEl = document.getElementById('siteTabs');
+const sitePanelsEl = document.getElementById('sitePanels');
+
+function renderAttentionPanel(){
+  const wrap = document.createElement('div');
+  wrap.className = 'site-panel';
+  siteAttentionPoints.forEach(p => {
+    const item = document.createElement('div');
+    item.className = 'attn-item';
+    item.innerHTML = `
+      <h4>${p.title}</h4>
+      <p>${p.body}</p>
+    `;
+    wrap.appendChild(item);
+  });
+  return wrap;
 }
-todos.forEach((t) => {
+
+function renderCopyPanel(){
+  const wrap = document.createElement('div');
+  siteCopyBlocks.forEach((b, idx) => {
+    const el = document.createElement('div');
+    el.className = 'insight comp-card';
+    const fieldsHtml = b.fields.map(f => `<div class="copy-field"><h4>${f.label}</h4><p>${f.value}</p></div>`).join('');
+    const pendingHtml = b.pending ? `<div class="copy-pending">⏳ Pendente — ${b.pending}</div>` : '';
+    el.innerHTML = `
+      <button class="insight-head" aria-expanded="false">
+        <span class="insight-title-wrap">
+          <span class="comp-card-head-row"><span class="comp-handle">${b.tag}</span></span>
+          <span class="insight-title" style="margin-top:4px; display:block;">${b.title}</span>
+        </span>
+        <span class="insight-chevron">+</span>
+      </button>
+      <div class="insight-body">
+        ${fieldsHtml}
+        ${pendingHtml}
+      </div>
+    `;
+    const head = el.querySelector('.insight-head');
+    const body = el.querySelector('.insight-body');
+    head.addEventListener('click', () => {
+      const isOpen = el.classList.contains('open');
+      el.classList.toggle('open', !isOpen);
+      head.setAttribute('aria-expanded', String(!isOpen));
+      body.style.maxHeight = isOpen ? null : body.scrollHeight + 'px';
+    });
+    wrap.appendChild(el);
+  });
+  return wrap;
+}
+
+function renderPlanPanel(){
+  const wrap = document.createElement('div');
+  wrap.className = 'site-panel';
+  sitePlanCategories.forEach(cat => {
+    const catEl = document.createElement('div');
+    catEl.className = 'plan-category';
+    catEl.innerHTML = `<span class="kicker" style="color:var(--purple);">${cat.name}</span>`;
+    cat.items.forEach(t => {
+      const item = document.createElement('div');
+      item.className = 'todo-item';
+      item.innerHTML = `<span class="todo-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="todo-text">${t}</span>`;
+      item.addEventListener('click', () => item.classList.toggle('done'));
+      catEl.appendChild(item);
+    });
+    wrap.appendChild(catEl);
+  });
+  return wrap;
+}
+
+function renderAnalyticsPanel(){
+  const wrap = document.createElement('div');
+  wrap.className = 'site-panel';
+  const stepsHtml = analyticsSteps.map((s, i) => `<li><b>${i + 1}.</b> ${s}</li>`).join('');
+  const rowsHtml = tagbookRows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('');
+  wrap.innerHTML = `
+    <span class="kicker" style="color:var(--purple);">4.1 — Acesso e delegação (a Fernanda cria, a Vincla administra)</span>
+    <ol class="analytics-steps">${stepsHtml}</ol>
+    <p class="analytics-email">Email para acesso da Vincla: <b>studiovincla@gmail.com</b></p>
+    <span class="kicker" style="color:var(--purple); display:block; margin-top:28px;">4.2 — Tagbook: elementos a rastrear no site</span>
+    <div style="overflow-x:auto; margin-top:14px;">
+      <table class="tagbook-table">
+        <tr><th>Elemento</th><th>Local</th><th>Evento GA4</th><th>Parâmetro</th></tr>
+        ${rowsHtml}
+      </table>
+    </div>
+    <p class="analytics-note">Instalar o snippet do GTM no &lt;head&gt; e logo após o &lt;body&gt; em todas as páginas, e adicionar o atributo <code>data-cta</code> (ou <code>data-social</code>) em cada elemento clicável — nenhum outro código de analytics precisa ser escrito pelo desenvolvedor.</p>
+  `;
+  return wrap;
+}
+
+function renderDoctoraliaPanel(){
+  const wrap = document.createElement('div');
+  wrap.className = 'site-panel';
+  const docHtml = doctoraliaSteps.map((s, i) => `<li><b>${i + 1}.</b> ${s}</li>`).join('');
+  const gbpHtml = gbpSteps.map((s, i) => `<li><b>${i + 1}.</b> ${s}</li>`).join('');
+  wrap.innerHTML = `
+    <span class="kicker" style="color:var(--purple);">6.1 — Doctoralia</span>
+    <p class="analytics-note" style="margin-top:6px;">Plataforma de busca e agendamento especializada em saúde — perfis de lá costumam rankear bem no Google para buscas como "nutricionista comportamental online".</p>
+    <ol class="analytics-steps">${docHtml}</ol>
+    <span class="kicker" style="color:var(--purple); display:block; margin-top:28px;">6.2 — Perfil da Empresa no Google (Google Business Profile)</span>
+    <p class="analytics-note" style="margin-top:6px;">Faz aparecer o card lateral no Google com foto, nota de avaliação e botão de contato/site — mesmo sem consultório físico.</p>
+    <ol class="analytics-steps">${gbpHtml}</ol>
+  `;
+  return wrap;
+}
+
+const sitePanelRenderers = [renderAttentionPanel, renderCopyPanel, renderPlanPanel, renderAnalyticsPanel, renderDoctoraliaPanel];
+
+function showSiteTab(idx){
+  siteTabsEl.querySelectorAll('.site-tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+  sitePanelsEl.innerHTML = '';
+  sitePanelsEl.appendChild(sitePanelRenderers[idx]());
+}
+
+siteTabDefs.forEach((label, idx) => {
+  const btn = document.createElement('button');
+  btn.className = 'site-tab-btn' + (idx === 0 ? ' active' : '');
+  btn.textContent = label;
+  btn.addEventListener('click', () => showSiteTab(idx));
+  siteTabsEl.appendChild(btn);
+});
+showSiteTab(0);
+
+// ---------------- RENDER TO-DOS DA FERNANDA (novo bloco) ----------------
+const fernandaTodos = [
+  { text: 'Criar perfil de empresa no Google e no Doctoralia', date: 'até 25/07' },
+  { text: 'Criar perfil no Instagram', date: 'até 25/07' },
+  { text: 'Coletar depoimentos das pessoas', date: 'até 25/07' },
+  { text: 'Consolidar clientes (com base no padrão que a Vincla enviar)', date: 'até 01/08' },
+  { text: 'Fazer ajustes no site', date: 'a definir' },
+];
+const fernandaTodoListEl = document.getElementById('fernanda-todo-list');
+const fernandaTodoFill = document.getElementById('fernandaTodoFill');
+function updateFernandaTodoProgress(){
+  const total = fernandaTodos.length;
+  const done = fernandaTodoListEl.querySelectorAll('.todo-item.done').length;
+  fernandaTodoFill.style.width = (done/total*100) + '%';
+}
+fernandaTodos.forEach((t) => {
   const item = document.createElement('div');
   item.className = 'todo-item';
-  item.innerHTML = `<span class="todo-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="todo-text">${t}</span>`;
+  item.innerHTML = `<span class="todo-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="todo-text">${t.text} <span style="color:var(--coral); font-weight:600;">— ${t.date}</span></span>`;
   item.addEventListener('click', () => {
     item.classList.toggle('done');
-    updateTodoProgress();
+    updateFernandaTodoProgress();
   });
-  todoListEl.appendChild(item);
+  fernandaTodoListEl.appendChild(item);
 });
-updateTodoProgress();
+updateFernandaTodoProgress();
 
 // ---------------- COMPETITOR DATA (real, from spreadsheet) ----------------
 const compDirect = [
